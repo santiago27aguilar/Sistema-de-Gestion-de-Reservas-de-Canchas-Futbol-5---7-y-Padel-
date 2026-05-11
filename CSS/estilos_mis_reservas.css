@@ -1,0 +1,164 @@
+/* =========================================
+   RESETEO Y FONDOS
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Empieza desde arriba */
+    min-height: 100vh;
+    padding: 50px 20px; /* Espacio para que no se pegue al techo */
+}
+
+/* =========================================
+   TARJETA PRINCIPAL
+   ========================================= */
+.reserva-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.reserva-card h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   TEXTOS E ICONOS
+   ========================================= */
+.icono-usuario {
+    width: 80px; 
+    height: 80px;
+    display: block;
+    margin: 0 auto 20px auto; 
+    object-fit: cover;
+}
+
+.texto-explicativo {
+    text-align: center;
+    color: #555555;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* =========================================
+   CARTEL DE ÉXITO (Reemplaza el style en línea)
+   ========================================= */
+.alerta-exito {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
+    border: 1px solid #c3e6cb;
+}
+
+/* =========================================
+   FORMULARIO Y GRILLA
+   ========================================= */
+.form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+}
+ 
+input {
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+    background-color: #e0e0e0;
+    border: none;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+}
+
+input:focus {
+    outline: 2px solid #28a745;
+}
+
+/* =========================================
+   BOTÓN Y LINKS
+   ========================================= */
+.btn-enviar {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    height: 52px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #0d7223;
+}
+
+.link-gestion {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.link-gestion a {
+    color: #b0b0b0;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    text-decoration: none;
+
+}
+
+.link-gestion a:hover {
+    color: #28a745;
+}
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+    .reserva-card {
+        padding: 30px 20px;
+    }
+    .form-row-2 {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

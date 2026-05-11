@@ -1,0 +1,168 @@
+* { box-sizing: border-box; }
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle, #083464 0%, #020720 100%);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 95%;
+    max-width: 900px; /* Más ancho para las dos columnas */
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    display: flex; /* Activa las dos columnas */
+    overflow: hidden; /* Para que las imágenes no se salgan de los bordes redondeados */
+    min-height: 500px;
+}
+
+/* LADO IZQUIERDO: IMÁGENES */
+.left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+}
+
+.img-wrapper {
+    width: 100%;
+    max-width: 200px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.img-wrapper img {
+    width: 80%;
+    height: auto;
+}
+
+/* LADO DERECHO: FORMULARIO */
+.right-side {
+    flex: 1.2;
+    padding: 50px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    color: #000;
+    font-size: 30px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+p {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background-color: #e8e8e8; /* Gris claro para los inputs */
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: 2px solid #28a745;
+}
+
+.btn-login {
+    background-color: #11ac35;
+    color: white;
+    border: none;
+    padding: 18px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background-color: #0d7223;
+    box-shadow: 0 6px 15px rgba(21, 104, 40, 0.4); 
+}
+
+.error-msg {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border: 1px solid #f5c6cb;
+}
+
+.forgot-link {
+    margin-top: 25px;
+}
+
+.forgot-link a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+/*.link-forgot{
+    color: #666;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}*/
+
+.forgot-link a:hover{
+    color: #11ac35;
+}
+
+/* RESPONSIVE: PARA CELULARES */
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column; /* Una columna arriba de la otra */
+    }
+    .left-side {
+        display: none; /* Opcional: ocultar imágenes en celular para ahorrar espacio */
+    }
+    .right-side {
+        padding: 40px 20px;
+    }
+}

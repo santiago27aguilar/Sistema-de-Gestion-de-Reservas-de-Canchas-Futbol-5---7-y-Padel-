@@ -1,0 +1,230 @@
+/* =========================================
+   RESETEO Y BASE
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #d9d9d9;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.reserva-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 720px;
+    padding: 50px 60px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   TARJETAS DE DETALLE (CENTRADO DINÁMICO)
+   ========================================= */
+.contenedor-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tarjeta-fila {
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+}
+
+.cuadro-img {
+    background-color: #25D366;
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cuadro-img img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.info-texto {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    padding: 0 15px;
+    margin-right: 100px; /* Centrado real compensando el cuadro-img */
+}
+
+.label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.dato {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* =========================================
+   ACCIONES (BOTÓN LARGO Y MENSAJES)
+   ========================================= */
+.footer-acciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.form-cancelar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-cancelar {
+    background-color: #e60b0b;
+    color: white;
+    border: none;
+    height: 55px;
+    width: 100%;
+    max-width: 450px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+}
+
+.btn-cancelar:hover {
+    background-color: #6f0e0e; /* Se pone un rojo más oscuro (bordó) */
+    box-shadow: 0 6px 15px rgba(101, 5, 5, 0.4); /* Le pone la sombra color rojo */
+}
+
+.link-volver {
+    margin-top: 25px;
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+.link-volver:hover {
+    color: #11ac35;
+    text-decoration: none;
+}
+
+/* MENSAJE DE ERROR SIN ESTILO EN LÍNEA */
+/*.error-msg {
+    margin-bottom: 20px;
+    color: #666;
+    text-align: center;
+}*/
+
+.cuadro-img-error {
+    background-color: #cc0000; /* Gris para mantener la estética de tus placeholders */
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cuadro-img-error img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.info-texto-error {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra horizontalmente */
+    justify-content: center;  /* Centra verticalmente */
+    padding: 0 15px;
+    margin-right: 100px;    /* Compensa el cuadro rojo para centrado total */
+}
+
+/* Estilo del texto de error dentro de la franja */
+.dato-error {
+    font-size: 18px;
+    font-weight: bold;
+    color: #cc0000; /* Rojo para resaltar el error */
+    text-align: center;
+}
+
+/* El texto pequeño de ayuda debajo de la franja */
+.error-msg-sub {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #777;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    max-width: 450px;
+}
+
+/* =========================================
+   MEDIA QUERIES (RESPONSIVO)
+   ========================================= */
+@media (max-width: 768px) {
+    .reserva-card { padding: 30px 25px; }
+    .info-texto { margin-right: 80px; }
+    .info-texto-error { margin-right: 80px;}
+    /**/
+    .cuadro-img { width: 80px; }
+    .cuadro-img-error {width: 80px;}
+    /**/
+    .dato { font-size: 20px; }
+    .dato-error { font-size: 20px;}
+}
+
+@media (max-width: 480px) {
+    .tarjeta-fila { height: 85px; }
+    .cuadro-img { width: 65px; }
+    .cuadro-img img { width: 35px; }
+    /**/
+    .cuadro-img-error {width: 65px; }
+    .cuadro-img-error img {width: 65px;}
+    /**/
+    .info-texto-error { margin-right: 65px; padding: 0 10px;}
+    .info-texto { margin-right: 65px; padding: 0 10px; }
+    .label { font-size: 12px; }
+    /**/
+    .dato { font-size: 17px; }
+    .dato-error {font-size: 17px;}
+    /**/
+    .btn-cancelar { height: 55px; font-size: 16px; }
+}

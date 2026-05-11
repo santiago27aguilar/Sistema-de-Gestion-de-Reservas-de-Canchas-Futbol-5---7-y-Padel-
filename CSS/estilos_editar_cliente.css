@@ -1,0 +1,174 @@
+/* =========================================
+   1. RESET Y FONDO GLOBAL
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #d8d8d8; 
+    color: #000;
+    /* Centramos el contenido en la pantalla ya que no hay navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+}
+
+/* =========================================
+   2. TARJETA PRINCIPAL Y ENCABEZADO
+   ========================================= */
+.card-blanca {
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.header-editar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.header-editar h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.img-cuadro {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    display: inline-block;
+}
+
+/* =========================================
+   3. FORMULARIO Y GRILLA
+   ========================================= */
+.grid-editar-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 60px; /* 30px vertical, 60px horizontal */
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    background-color: #e0e0e0;
+    border: none;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+    box-shadow: inset 0 0 0 2px #28a745;
+}
+
+/* Alineaciones específicas según tu diseño de Figma */
+.izq label { text-align: left; }
+.der label { text-align: right; }
+.centro label { text-align: center; }
+
+/* El contenedor del correo es más angosto y va centrado */
+.correo-container {
+    width: 60%;
+    margin: 0 auto 50px auto;
+}
+
+/* =========================================
+   4. BOTÓN Y ENLACE VOLVER
+   ========================================= */
+.acciones-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-actualizar {
+    background-color: #11ac35;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    width: 60%; /* Mismo ancho que el input del correo */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+}
+
+.btn-actualizar:hover {
+    background-color: #0d7223;
+    box-shadow: 0 6px 15px rgba(21, 104, 40, 0.4);
+}
+
+.link-volver {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.5s ease;
+}
+
+.link-volver:hover {
+    color: #666;
+}
+
+/* =========================================
+   5. RESPONSIVE (CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+    .card-blanca {
+        padding: 30px 20px;
+    }
+
+    .header-editar {
+        flex-direction: column; /* Apila el título y la foto */
+        text-align: center;
+    }
+
+    .grid-editar-top {
+        grid-template-columns: 1fr; /* Pasa a 1 columna */
+        gap: 25px;
+    }
+
+    /* En celu forzamos todo a la izquierda o centro para que sea legible */
+    .der label { text-align: left; }
+    
+    .correo-container {
+        width: 100%;
+    }
+
+    .btn-actualizar {
+        width: 100%;
+    }
+}

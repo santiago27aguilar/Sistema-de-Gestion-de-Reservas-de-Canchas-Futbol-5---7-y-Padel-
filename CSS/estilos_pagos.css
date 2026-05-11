@@ -1,0 +1,367 @@
+/* =========================================
+   1. RESET Y FONDO GLOBAL
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #d8d8d8; 
+    color: #000;
+}
+
+.container {
+    max-width: 1000px; 
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
+.navbar {
+    background-color: #000;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; 
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+.navbar a:hover {
+    color: #00ff3c; 
+}
+
+.navbar .btn-salir {
+    background-color: #e32626; 
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.navbar .btn-salir:hover {
+    background-color: #9b1b1b; 
+    color: #fff;
+}
+
+/* =========================================
+   3. ALERTAS DE ÉXITO O ERROR
+   ========================================= */
+.alerta-exito {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.alerta-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* =========================================
+   4. TARJETA Y ENCABEZADOS
+   ========================================= */
+.card-blanca {
+    background-color: #fff;
+    padding: 50px; 
+    border-radius: 4px; 
+    margin-bottom: 50px;
+}
+
+.header-pagos {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header-pagos h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.img-cuadro-pagos {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* =========================================
+   5. GRILLA DE FORMULARIO (TOP)
+   ========================================= */
+.grid-pagos-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 80px; 
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.label-derecha {
+    text-align: right;
+}
+
+select {
+    width: 100%;
+    padding: 14px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 2px;
+    font-size: 15px;
+    color: #333;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: 2px solid #28a745;
+}
+
+.info-pago {
+    width: 100%;
+    padding: 14px;
+    background-color: #d4d4d4; 
+    border-radius: 2px;
+    font-size: 15px;
+    color: #666;
+    text-align: left;
+}
+
+/* =========================================
+   6. MONTO FINAL Y BOTÓN (BOTTOM)
+   ========================================= */
+.grid-pagos-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.monto-texto {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+}
+
+.monto-valor {
+    font-size: 28px;
+    font-weight: bold;
+    white-space: nowrap; 
+    color: #098f22; 
+}
+
+.btn-guardar {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px; 
+    width: 45%; 
+    font-size: 18px;
+    font-weight: bold; 
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+}
+
+.btn-guardar:hover {
+    background-color: #0d7223;
+    box-shadow: 0 6px 15px rgba(21, 104, 40, 0.4);
+    color: #ffffff;
+}
+
+/* =========================================
+   7. SECCIÓN HISTORIAL (BUSCADOR Y TABLA)
+   ========================================= */
+.titulo-centrado {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* PANEL DE HERRAMIENTAS - DISEÑO FIGMA */
+.herramientas-tabla {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.buscador-moderno {
+    flex: 1; /* Ocupa todo el espacio central */
+    max-width: 600px;
+    padding: 14px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.buscador-moderno:focus {
+    outline: 2px solid #2b1b54;
+}
+
+/* BOTONES DE EXPORTACIÓN (EXCEL Y PDF) */
+.btn-exportar {
+    padding: 14px 35px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 120px;
+    transition: all 0.5s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-excel {
+    background-color: #28a745; 
+}
+
+.btn-excel:hover {
+    background-color: #0d7223;
+}
+
+.btn-pdf {
+    background-color: #e60b0b;
+}
+
+.btn-pdf:hover {
+    background-color: #6f0e0e;
+}
+
+/* TABLA MORADA OSCURA */
+.table-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 6px;
+}
+
+.tabla-moderna {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.tabla-moderna thead th {
+    background-color: #2b1b54; 
+    color: white;
+    padding: 18px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.tabla-moderna td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    vertical-align: middle;
+}
+
+.acciones-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-eliminar {
+    background-color: #e60b0b;
+    color: white;
+    padding: 8px 13px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 13px;
+    transition: all 0.5s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #9b1b1b;
+}
+
+.sin-permisos {
+    color: #888;
+    font-size: 12px;
+}
+
+/* =========================================
+   8. RESPONSIVE (MÓVILES)
+   ========================================= */
+@media (max-width: 768px) {
+    .grid-pagos-top {
+        grid-template-columns: 1fr; 
+        gap: 0px; 
+    }
+    
+    .label-derecha {
+        text-align: left;
+    }
+
+    .grid-pagos-bottom {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .monto-texto, .monto-valor {
+        font-size: 24px; 
+    }
+
+    .btn-guardar {
+        width: 100%; 
+    }
+
+    /* Adaptación del panel en celulares */
+    .herramientas-tabla {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .buscador-moderno {
+        width: 100%; 
+        max-width: none;
+        order: -1; /* Pone el buscador arriba de los botones en el celular */
+    }
+
+    .btn-exportar {
+        width: 100%; 
+    }
+}
