@@ -77,7 +77,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt_res->execute([':inicio' => $hora_inicio_db, ':fin' => $hora_fin_db, ':id_can' => $id_cancha, ':id_cli' => $id_cliente]);
 
         $conexion->commit();
-        header("Location: ../html/cliente.php?reserva=ok" . urlencode($nombre) . "&ape=" . urlencode($apellido));
+        // CORRECCIÓN: Agregamos &nom= antes del nombre
+        header("Location: ../html/cliente.php?reserva=ok&nom=" . urlencode($nombre) . "&ape=" . urlencode($apellido));
         exit();
 
     } catch (Exception $e) {
