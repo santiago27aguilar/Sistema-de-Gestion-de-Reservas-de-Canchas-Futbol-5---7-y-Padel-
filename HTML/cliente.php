@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservar Cancha</title>
+    <title>Reservar Cancha - Pampa Fútbol</title>
     <link rel="stylesheet" href="../css/estilos_cliente.css">
 </head>
 <body>
  
 <div class="reserva-card">
 
+    <!-- Mensaje de Éxito -->
     <?php if (isset($_GET['reserva']) && $_GET['reserva'] == 'ok'): ?>
         <?php 
             $num = "5493814152422"; 
@@ -17,7 +18,7 @@
             $texto = rawurlencode("¡Hola! Soy $nom. Solicité un turno en Pampa Fútbol y quiero confirmar el pago.");
         ?>
         <div class="mensaje-exito">
-            <h3>Turno Reservado con Exito!</h3>
+            <h3>¡Turno Reservado con Éxito!</h3>
             <p class="estado-pago">ESTADO: PAGO PENDIENTE</p>
             <div>
                 <a href="https://api.whatsapp.com/send?phone=<?php echo $num; ?>&text=<?php echo $texto; ?>" target="_blank" class="btn-whatsapp">Contactar por WhatsApp</a>
@@ -30,24 +31,39 @@
     <img src="../img/icono-turno.png" alt="Icono" class="icono-usuario">
 
     <form action="../php/procesar_reserva.php" method="POST">
+        
+        <!-- Grilla Principal -->
         <div class="form-main-grid">
+            
+            <!-- Columna Izquierda -->
             <div class="columna-izq">
                 <div class="form-row-2">
-                    <div class="form-group"><label>Nombre</label><input type="text" name="nombre" required></div>
-                    <div class="form-group"><label>Documento</label><input type="text" name="dni"></div>
+                    <div class="form-group">
+                        <label>Nombre</label><input type="text" name="nombre" required placeholder="Ej: Juan">
+                    </div>
+                    <div class="form-group">
+                        <label>Documento</label><input type="text" name="dni" placeholder="Sin puntos" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                    </div>
                 </div>
                 <div class="form-row-2">
-                    <div class="form-group"><label>Apellido</label><input type="text" name="apellido" required></div>
-                    <div class="form-group"><label>WhatsApp</label><input type="tel" name="telefono" required></div>
+                    <div class="form-group">
+                        <label>Apellido</label><input type="text" name="apellido" required placeholder="Ej: Perez">
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp</label><input type="tel" name="telefono" required placeholder="381......." oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                    </div>
                 </div>
-                <div class="form-group"><label>Correo Electrónico</label><input type="email" name="correo" required></div>
+                <div class="form-group">
+                    <label>Correo Electrónico</label><input type="email" name="correo" required placeholder="ejemplo@gmail.com">
+                </div>
             </div>
 
+            <!-- Columna Derecha -->
             <div class="columna-der">
                 <div class="form-row-2">
                     <div class="form-group">
                         <label>Cancha</label>
-                        <select name="idcancha" id="id_cancha" required onchange="actualizarPrecio()">
+                        <select name="idcancha" id="id_cancha" required>
                             <option value="">Seleccionar</option>
                             <?php
                                 include '../php/conexion.php';
@@ -58,30 +74,45 @@
                             ?>
                         </select>
                     </div>
-                    <div class="form-group"><label>Fecha</label><input type="date" name="fecha_reserva" required></div>
+                    <div class="form-group"><label>Fecha</label><input type="date" name="fecha_reserva" id="fecha_reserva" required></div>
                 </div>
                 <div class="form-row-2">
                     <div class="form-group">
                         <label>Duración</label>
-                        <select name="duracion" id="duracion_turno" onchange="actualizarPrecio()">
+                        <select name="duracion" id="duracion_turno">
                             <option value="1">1 Hora</option>
                             <option value="2">2 Horas</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Hora Inicio</label>
-                        <select name="hora_inicio" id="hora_reserva" required><option value="">Elegir...</option></select>
+                        <select name="hora_inicio" id="hora_reserva" required>
+                            <option value="">Elegir Horario...</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Cartel de Precio (Alineado con Correo) -->
+                <div class="form-group">
+                    <label style="visibility: hidden;">Precio Oculto</label>
+                    <div id="cuadro_precio" class="precio-banner invisible">
+                        <p>
+                            <span id="texto_duracion">Total:</span> 
+                            <strong id="precio_final">$0</strong>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Footer del Formulario (Tu diseño original) -->
         <div class="footer-formulario">
             <div class="gestion-container">
-                <a href="../html/mis_reservas.php" class="link-gestion">VER RESERVA o CANCELAR RESERVA</a>
+                <a href="../html/mis_reservas.php" class="link-gestion">VER RESERVA - CANCELAR RESERVA</a>
             </div>
             <button type="submit" class="btn-enviar">CONFIRMAR TURNO</button>
         </div>
+        
     </form>
 </div>
 
